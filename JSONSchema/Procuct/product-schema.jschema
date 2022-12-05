@@ -30,7 +30,7 @@
       "$ref": "geographical-location.schema.json"
     }
   },
-  "required": [
+  "requires": [
     "productId",
     "productName",
     "price"
