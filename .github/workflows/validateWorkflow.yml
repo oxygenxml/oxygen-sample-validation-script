@@ -1,7 +1,9 @@
 name: Validate Script
 
 on:
-  pull_request:
+  push:
+    branches: [ master ]    
+  pull_request:  
     branches: [ master ]
     types: [ opened, synchronize, reopened ]
 
