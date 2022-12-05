@@ -1,2 +1,2 @@
 # ValidateScript
-Example for using the Oxygen Validate script
+Example of using the Oxygen Validate script
