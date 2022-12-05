@@ -14,11 +14,11 @@ task initValidation {
 
 task runValidation(type:Exec, dependsOn: [initValidation]) {
  workingDir "${projectDir}/extracted/oxygen"
- commandLine "sh", "${projectDir}/extracted/oxygen/scripts/validate.sh", "${projectDir}/../", "-sf", "${projectDir}/../validateScript.xpr", "-rft", "html",  "-rf", "${projectDir}../out/validationReport.html"
+ commandLine "sh", "${projectDir}/extracted/oxygen/scripts/validate.sh", "${projectDir}/../", "-sf", "${projectDir}/../validateScript.xpr", "-rft", "html",  "-rf", "${projectDir}/../out/validationReport.html"
  ignoreExitValue true
   doLast {
         if(execResult.getExitValue() != 0) {
-            println new File("${projectDir}../out/validationReport.html").text
+            println new File("${projectDir}/../out/validationReport.html").text
             throw new TaskExecutionException( it,
                 new Exception( "Validation failed; "
                               + "see task output for details." )
