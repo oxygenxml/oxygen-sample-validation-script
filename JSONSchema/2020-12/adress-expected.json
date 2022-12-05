@@ -1,0 +1,9 @@
+{
+    "$schema": "address.schema.json",
+    "locality": "Reykjavík",
+    "region": "Höfuðborgarsvæðið",
+    "postal-code": "107",
+    "country-name": "Iceland",
+    "post-office-box": "123",
+    "street-address": "17 Austerstræti"
+}
