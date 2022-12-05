@@ -1,0 +1,41 @@
+import org.gradle.api.tasks.Exec
+
+
+task initValidation {
+ String projectDir = "."
+ doLast {
+ if(! new File("${projectDir}/extracted/oxygen/").exists()){
+   ant.get(src: 'https://archives.oxygenxml.com/Oxygen/Editor/InstData25.0/All/oxygen.tar.gz', dest: "${projectDir}/oxygen.tar.gz", skipexisting: 'true')
+   ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
+   new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv( 'SCRIPTING_LICENSE_KEY' ).replaceAll("  ", "\n"))
+  }
+ }
+}
+
+task runValidation(type:Exec, dependsOn: [initValidation]) {
+ workingDir "${projectDir}/extracted/oxygen"
+ commandLine "sh", "${projectDir}/extracted/oxygen/scripts/validate.sh", "${projectDir}/../", "-sf", "${projectDir}/../validateScript.xpr", "-rft", "html",  "-rf", "${projectDir}../out/validationReport.html"
+ ignoreExitValue true
+  doLast {
+        if(execResult.getExitValue() != 0) {
+            println new File("${projectDir}../out/validationReport.html").text
+            throw new TaskExecutionException( it,
+                new Exception( "Validation failed; "
+                              + "see task output for details." )
+            )
+        }
+    }
+}
+
+task postProcessValidation(dependsOn: [runValidation]) {
+ String projectDir = "."
+ doLast {
+    ant.replace(
+      file: '${projectDir}/../../site/validationReport.html',
+  )
+ }
+}
+
+task dist(dependsOn: [initValidation])
+
+defaultTasks 'dist'
