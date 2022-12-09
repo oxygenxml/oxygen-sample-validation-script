@@ -6,12 +6,8 @@ task initValidation {
         ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
         new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv( 'SCRIPTING_LICENSE_KEY' ).replaceAll("  ", "\n"))
     }
-     givePermission.execute()
+     commandLine 'chmod', '700', '${projectDir}/build/extracted/oxygen/scripts/validate.bat'
  }
-}
-
-task givePermission(type: Exec) {
-    commandLine 'chmod', '700', '${projectDir}/build/extracted/oxygen/scripts/validate.bat'
 }
 
 task runValidation(type:Exec, dependsOn: [initValidation]) {
