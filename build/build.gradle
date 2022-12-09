@@ -1,12 +1,17 @@
 task initValidation {
  String projectDir = "."
  doLast {
- if(! new File("${projectDir}/extracted/oxygen/").exists()){
-   ant.get(src: 'https://archives.oxygenxml.com/Oxygen/Editor/InstData25.0/All/oxygen.tar.gz', dest: "${projectDir}/oxygen.tar.gz", skipexisting: 'true')
-   ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
-   new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv( 'SCRIPTING_LICENSE_KEY' ).replaceAll("  ", "\n"))
-  }
+    if(! new File("${projectDir}/extracted/oxygen/").exists()){
+        ant.get(src: 'https://archives.oxygenxml.com/Oxygen/Editor/InstData25.0/All/oxygen.tar.gz', dest: "${projectDir}/oxygen.tar.gz", skipexisting: 'true')
+        ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
+        new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv( 'SCRIPTING_LICENSE_KEY' ).replaceAll("  ", "\n"))
+    }
+     givePermission.execute()
  }
+}
+
+task givePermission(type: Exec) {
+    commandLine 'chmod', '700', '${projectDir}/build/extracted/oxygen/scripts/validate.bat'
 }
 
 task runValidation(type:Exec, dependsOn: [initValidation]) {
