@@ -8,11 +8,12 @@ task initValidation (){
          new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv('SCRIPTING_LICENSE_KEY').replaceAll("  ", "\n"))
      }
  }
-    exec {
-        workingDir "${projectDir}/extracted/oxygen/scripts"
-        commandLine 'chmod', '700', 'validate.bat'
+    doLast {
+        project.exec {
+            workingDir "${projectDir}/extracted/oxygen/scripts"
+            commandLine 'chmod', '700', 'validate.bat'
+        }
     }
-
 }
 
 task runValidation(type:Exec, dependsOn: [initValidation]) {
