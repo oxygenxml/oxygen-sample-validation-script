@@ -9,8 +9,8 @@ task initValidation (){
      }
  }
     exec {
-        workingDir "${projectDir}/extracted/oxygen"
-        commandLine 'chmod', '700', '${projectDir}/build/extracted/oxygen/scripts/validate.bat'
+        workingDir "${projectDir}/extracted/oxygen/scripts"
+        commandLine 'chmod', '700', 'validate.bat'
     }
 
 }
@@ -22,9 +22,7 @@ task runValidation(type:Exec, dependsOn: [initValidation]) {
   doLast {
         if(execResult.getExitValue() != 0) {
             println new File("${projectDir}/validationReport.html").text
-            throw new TaskExecutionException( it,
-                new Exception( "Validation failed, see task output for details: ")
-            )
+            throw new TaskExecutionException( it, new Exception( "Validation failed, see task output for details: "))
         }
     }
 }
