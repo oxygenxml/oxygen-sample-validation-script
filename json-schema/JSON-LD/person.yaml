@@ -7,7 +7,7 @@ address:
   addressRegion: CO
   postalCode: 80840
   streetAddress: 100 Main Street
-base: 1
+base:1
 colleague:
 - http://www.example.com/JohnColleague.html
 - http://www.example.com/JameColleague.html

@@ -20,6 +20,126 @@
                         <scenarioAssociation-array>
                             <scenarioAssociation>
                                 <field name="url">
+                                    <String>json-schema/JSON-LD/person.yaml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/json-ld.framework/JSON-LD/JSON-LD</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>json-schema/JSON-LD/person.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/json-ld.framework/JSON-LD/JSON-LD</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>json-schema/OpenAPI/petSitterOpenAPI.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/openapi3.0.framework/OpenAPI 3.0/OpenAPI 3.0</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>json-schema/OpenAPI/farmstall.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/openapi3.0.framework/OpenAPI 3.0/OpenAPI 3.0</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>json-schema/AsyncAPI/emailService.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>json-schema/AsyncAPI/emailService.yaml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
                                     <String>JSONSchema/Procuct/geographical-location.schema.json</String>
                                 </field>
                                 <field name="scenarioIds">

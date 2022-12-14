@@ -11,7 +11,7 @@
     "paths": {
         "/reviews": {
             "get": {
-                "description": "Get a list of reviews",
+                "description-new": "Get a list of reviews",
                 "parameters": [
                     {
                         "name": "maxRating",
