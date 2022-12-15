@@ -23,18 +23,13 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
         if (execResult.getExitValue() != 0) {
             println new File("${projectDir}/report/validationReport.html").text
             throw new TaskExecutionException(it, new Exception("Validation failed, see task output for details: "))
+        } else {
+            ant.replace(
+                    file: '${projectDir}/report/validationReport.html',
+                    token: 'file://home/runner/work/ValidateScript',
+                    value: 'test'
+            )
         }
-    }
-}
-
-task postProcessValidation(dependsOn: [runValidation]) {
-    String projectDir = "."
-    doLast {
-        ant.replace(
-                file: '${projectDir}/report/validationReport.html',
-                token: 'file://home/runner/work/ValidateScript',
-                value: 'test'
-        )
     }
 }
 
