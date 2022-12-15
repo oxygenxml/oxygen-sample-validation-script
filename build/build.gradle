@@ -26,7 +26,7 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
         } else {
             ant.replace(
                     file: '../report/validationReport.html',
-                    token: 'file://home/runner/work/ValidateScript',
+                    token: 'file:/home/runner/work/ValidateScript',
                     value: 'test'
             )
         }
