@@ -1,4 +1,4 @@
-name: Run Validation  Script
+name: Run Validation Script
 on:
   push:
     branches: [ main ]    

@@ -31,7 +31,7 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {\
             )
             ant.replace(
                     file: '../report/validationReport.html',
-                    token: '/home/runner/work/ValidateScript',
+                    token: '/home/runner/work/ValidateScript/ValidateScript',
                     value:  repoMainBranchUrl
             )
 
