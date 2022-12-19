@@ -5,4 +5,4 @@ To run the script, start a CMD in the project root directory (or use the Intelli
 .\gradlew</code>
 
 Validation report generated using Oxygen Scripting:
-https://octaviann.github.io/ValidateScript/validationReport.html
+https://oxygenxml.github.io/ValidateScript/validationReport.html
