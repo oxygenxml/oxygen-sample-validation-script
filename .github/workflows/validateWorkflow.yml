@@ -11,7 +11,7 @@ on:
     inputs:
       validationDir:
         description: 'The directory to be validated.'
-        default: 'all'
+        default: 'json-schema'
 
 jobs:
   validate:
