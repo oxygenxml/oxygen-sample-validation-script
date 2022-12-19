@@ -8,6 +8,10 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    inputs:
+      validationDir:
+        description: 'The directory to be validated.'
+        default: 'all'
 
 jobs:
   validate:
@@ -32,7 +36,7 @@ jobs:
         - name: Build with Gradle
           env: # Or as an environment variable
            SCRIPTING_LICENSE_KEY: ${{secrets.SCRIPTING_LICENSE_KEY}}
-          run: cd build; ./gradlew runValidation -PvalidationDir=json-schema --info --stacktrace
+          run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} --info --stacktrace
        
         - name: Deploy
           uses: JamesIves/github-pages-deploy-action@v4.4.1
