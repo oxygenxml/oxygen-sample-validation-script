@@ -16,7 +16,10 @@ task initValidation() {
 
 task runValidation(type: Exec, dependsOn: [initValidation]) {
     workingDir "${projectDir}/extracted/oxygen"
-    commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh", "${projectDir}/../" + validationDir, "-sf", "${projectDir}/../validateScript.xpr", "-rft", "html", "-rf", "${projectDir}/../report/validationReport.html"
+    commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh",
+            "${projectDir}/../validation/" + validationDir, "-sf",
+            "${projectDir}/../validateScript.xpr", "-rft", "html", "-rf",
+            "${projectDir}/../report/validationReport.html"
 
     doLast {
         if (execResult.getExitValue() != 0) {
@@ -26,13 +29,13 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             // Replace file locations from GitHub VM with locations from repository.
             ant.replace(
                     file: '../report/validationReport.html',
-                    token: ghPagesUrl + 'file:/home/runner/work/ValidateScript/ValidateScript',
-                    value:  repoMainBranchUrl
+                    token: ghPagesUrl + '/ValidateScript/ValidateScriptfile:/home/runner/work/ValidateScript/ValidateScript',
+                    value:  repoMainBranchUrlRaw
             )
             ant.replace(
                     file: '../report/validationReport.html',
                     token: '/home/runner/work/ValidateScript/ValidateScript',
-                    value:  repoMainBranchUrl
+                    value:  repoMainBranchUrlRaw
             )
         }
     }
