@@ -9,7 +9,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="p:person" minOccurs="1" maxOccurs="unbounded"/>
+                <xs:element ref="p:person" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
         <xs:unique name="unique1">
@@ -35,7 +35,7 @@
             <xs:sequence>
                 <xs:element ref="p:name"/>
                 <xs:element ref="p:email" minOccurs="0" maxOccurs="unbounded"/>
-                <xs:element ref="p:link" minOccurs="0" maxOccurs="1"/>
+                <xs:element ref="p:link"/>
                 <xs:element ref="p:url" minOccurs="0" maxOccurs="unbounded"/>
             </xs:sequence>
             <xs:attribute name="id" type="xs:ID" use="required">
