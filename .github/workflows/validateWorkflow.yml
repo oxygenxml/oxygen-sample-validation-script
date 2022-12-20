@@ -1,7 +1,10 @@
 name: Run Validation Script
 on:
   push:
-    branches: [ main ]    
+    branches: [ main ]
+    paths:
+      # Automatically run the script when changes are pushed to validation dir.
+      - validation/**
   pull_request:  
     branches: [ main ]
     types: [ opened, synchronize, reopened ]
