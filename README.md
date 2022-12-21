@@ -7,7 +7,7 @@ report that is available on GitHub Pages platform.
 To get things ready, follow these steps:
 1. Create a new GitHub project using this template. This allows you to easily create a new repository without copying and pasting the content, and with no history or reference to this repository.
    All you have to do is click the <kbd>Use this template</kbd> button. Make sure to check <i>Include all branches</i> option.
-2. Get an Oxygen Scripting license key from https://www.oxygenxml.com/xml_scripting/pricing.html (you can also request a trial). Add it as a secret to your repository (Settings -> Secrets -> Actions), and name it "SCRIPTING_LICENSE_KEY". 
+2. Get an Oxygen Scripting license key from https://www.oxygenxml.com/xml_scripting/pricing.html (you can also request a [trial](https://www.oxygenxml.com/xml_scripting/register.html)). Add it as a secret to your repository (Settings -> Secrets -> Actions), and name it "SCRIPTING_LICENSE_KEY". 
 3. Go to <i>build/gradle.properties</i> file and replace "oxygenxml" with your GitHub {userid}.
 
 Now, as the setup should be ready, you can simply add your files inside the <i>validation</i> directory and push them into your repository.
@@ -21,5 +21,3 @@ If you want to validate only the files in a specific directory, you need to run 
 
 The validation report generated using Oxygen Scripting should be available here:
 https://{userid}.github.io/{reponame}/validationReport.html
-
-
