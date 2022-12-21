@@ -12,12 +12,227 @@
                         </String-array>
                     </entry>
                     <entry>
+                        <String>key.markdown.schematron.validator.option.pane</String>
+                        <Boolean>true</Boolean>
+                    </entry>
+                    <entry>
                         <String>key.xml.catalog.option.pane</String>
                         <Boolean>true</Boolean>
                     </entry>
                     <entry>
+                        <String>markdown.schematron.validator</String>
+                        <markdownSchematronValidatorOptions>
+                            <field name="mdValidatorOptions">
+                                <serializableOrderedMap>
+                                    <entry>
+                                        <String>DITA</String>
+                                        <markdownSchematronValidatorTypeOptions>
+                                            <field name="isValidationEnable">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                            <field name="schematronPath">
+                                                <String>file:/D:/GitRepos/oxygen-sample-validation-script/validation/markdown/schematron-validation/md-as-dita.sch</String>
+                                            </field>
+                                        </markdownSchematronValidatorTypeOptions>
+                                    </entry>
+                                    <entry>
+                                        <String>HTML</String>
+                                        <markdownSchematronValidatorTypeOptions>
+                                            <field name="isValidationEnable">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                            <field name="schematronPath">
+                                                <String>file:/D:/GitRepos/oxygen-sample-validation-script/validation/markdown/schematron-validation/md-as-html.sch</String>
+                                            </field>
+                                        </markdownSchematronValidatorTypeOptions>
+                                    </entry>
+                                </serializableOrderedMap>
+                            </field>
+                        </markdownSchematronValidatorOptions>
+                    </entry>
+                    <entry>
                         <String>validation.scenario.associations</String>
                         <scenarioAssociation-array>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/xslt-xquery/personal.xsl</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>personal</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/OpenAPI/farmstall.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/openapi3.1.framework/OpenAPI 3.1/OpenAPI 3.1</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/AsyncAPI/emailService.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/OpenAPI/petSitterOpenAPI.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/openapi3.0.framework/OpenAPI 3.0/OpenAPI 3.0</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/AsyncAPI/emailService.yaml</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/html/schematron/correct.html</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>html-schematron</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/html/schematron/bad.html</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>html-schematron</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/Product/product-schema.jschema</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>product schema</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/Product/geographical-location.schema.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>product schema</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>json-schema/JSON-LD/person.yaml</String>
@@ -190,12 +405,117 @@
                                             <field name="validationType">
                                                 <validationUnitType>
                                                     <field name="validationInputType">
+                                                        <String>text/html</String>
+                                                    </field>
+                                                </validationUnitType>
+                                            </field>
+                                            <field name="url">
+                                                <String>${currentFileURL}</String>
+                                            </field>
+                                            <field name="validationEngine">
+                                                <validationEngine>
+                                                    <field name="engineType">
+                                                        <String>HTML Schematron Validator</String>
+                                                    </field>
+                                                    <field name="allowsAutomaticValidation">
+                                                        <Boolean>true</Boolean>
+                                                    </field>
+                                                </validationEngine>
+                                            </field>
+                                            <field name="allowAutomaticValidation">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                            <field name="extensions">
+                                                <null/>
+                                            </field>
+                                            <field name="validationSchema">
+                                                <validationUnitSchema>
+                                                    <field name="dtdSchemaPublicID">
+                                                        <null/>
+                                                    </field>
+                                                    <field name="schematronPhase">
+                                                        <String>#ALL</String>
+                                                    </field>
+                                                    <field name="type">
+                                                        <Integer>7</Integer>
+                                                    </field>
+                                                    <field name="uri">
+                                                        <String>${pdu}/validation/html/schematron/sch-rules-with-phases.sch</String>
+                                                    </field>
+                                                </validationUnitSchema>
+                                            </field>
+                                            <field name="validationAdvancedSettings">
+                                                <null/>
+                                            </field>
+                                        </validationUnit>
+                                    </list>
+                                </field>
+                                <field name="type">
+                                    <String>Validation_scenario</String>
+                                </field>
+                                <field name="name">
+                                    <String>html-schematron</String>
+                                </field>
+                            </validationScenario>
+                            <validationScenario>
+                                <field name="pairs">
+                                    <list>
+                                        <validationUnit>
+                                            <field name="validationType">
+                                                <validationUnitType>
+                                                    <field name="validationInputType">
+                                                        <String>text/xsl</String>
+                                                    </field>
+                                                </validationUnitType>
+                                            </field>
+                                            <field name="url">
+                                                <String>${currentFileURL}</String>
+                                            </field>
+                                            <field name="validationEngine">
+                                                <validationEngine>
+                                                    <field name="engineType">
+                                                        <String>Saxon-EE</String>
+                                                    </field>
+                                                    <field name="allowsAutomaticValidation">
+                                                        <Boolean>true</Boolean>
+                                                    </field>
+                                                </validationEngine>
+                                            </field>
+                                            <field name="allowAutomaticValidation">
+                                                <Boolean>true</Boolean>
+                                            </field>
+                                            <field name="extensions">
+                                                <null/>
+                                            </field>
+                                            <field name="validationSchema">
+                                                <null/>
+                                            </field>
+                                            <field name="validationAdvancedSettings">
+                                                <null/>
+                                            </field>
+                                        </validationUnit>
+                                    </list>
+                                </field>
+                                <field name="type">
+                                    <String>Validation_scenario</String>
+                                </field>
+                                <field name="name">
+                                    <String>personal</String>
+                                </field>
+                            </validationScenario>
+                            <validationScenario>
+                                <field name="pairs">
+                                    <list>
+                                        <validationUnit>
+                                            <field name="validationType">
+                                                <validationUnitType>
+                                                    <field name="validationInputType">
                                                         <String>text/json-schema</String>
                                                     </field>
                                                 </validationUnitType>
                                             </field>
                                             <field name="url">
-                                                <String>${pdu}/JSONSchema/Procuct/product-schema.jschema</String>
+                                                <String>${pdu}/validation/json/Product/product-schema.jschema</String>
                                             </field>
                                             <field name="validationEngine">
                                                 <validationEngine>
