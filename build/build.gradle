@@ -27,7 +27,7 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             throw new TaskExecutionException(it, new Exception("Validation failed, see task output for details."))
         } else {
             // Replace file locations from GitHub VM with locations from repository.
-            println ${projectDir}
+            println "teh project URL: ${projectDir}"
             ant.replace(
                     file: '../report/validationReport.html',
                     token: 'file:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
