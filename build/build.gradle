@@ -34,6 +34,11 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             )
             ant.replace(
                     file: '../report/validationReport.html',
+                    token: 'file:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
+                    value:  repoMainBranchUrlRaw
+            )
+            ant.replace(
+                    file: '../report/validationReport.html',
                     token: '/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
                     value:  repoMainBranchUrlRaw
             )
