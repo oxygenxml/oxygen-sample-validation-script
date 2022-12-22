@@ -29,18 +29,13 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             // Replace file locations from GitHub VM with locations from repository.
             ant.replace(
                     file: '../report/validationReport.html',
-                    token: ghPagesUrl + '/oxygen-sample-validation-script/oxygen-sample-validation-scriptfile:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
-                    value:  repoMainBranchUrlRaw
-            )
-            ant.replace(
-                    file: '../report/validationReport.html',
                     token: 'file:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
-                    value:  repoMainBranchUrlRaw
+                    value:  repoMainBranchUrl
             )
             ant.replace(
                     file: '../report/validationReport.html',
-                    token: '/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
-                    value:  repoMainBranchUrlRaw
+                    token: '/home/runner/work',
+                    value:  ''
             )
         }
     }
