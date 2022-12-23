@@ -17,9 +17,10 @@ task initValidation() {
 task runValidation(type: Exec, dependsOn: [initValidation]) {
     workingDir "${projectDir}/extracted/oxygen"
     commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh",
-            "${projectDir}/../validation/" + validationDir, "-sf",
-            "${projectDir}/../validateScript.xpr", "-rft", "html", "-rf",
-            "${projectDir}/../report/validationReport.html"
+            "${projectDir}/../validation/" + validationDir, 
+            "-sf", "${projectDir}/../validateScript.xpr", 
+            "-rft", "html", 
+            "-rf", "${projectDir}/../report/validationReport.html"
 
     doLast {
         if (execResult.getExitValue() != 0) {
