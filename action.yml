@@ -1,0 +1,39 @@
+name: Oxygen Validation Script
+description: Validate your files using Oxygen Scripting
+inputs:
+  validationDir:
+    description: The name of directory containing the files to be validated.
+    required: true
+    default: validation
+runs:
+  using: "composite"
+  steps:
+    - name: Fetch Sources
+      uses: actions/checkout@v3
+
+    # Validate wrapper
+    - name: Gradle Wrapper Validation
+      uses: gradle/wrapper-validation-action@v1.0.4
+
+    # Setup Java 11 environment for the next steps
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: zulu
+        java-version: 11
+
+    - name: Make gradlew executable
+      run: chmod +x ./build/gradlew
+      shell: bash
+
+    - name: Build with Gradle
+      env: # Or as an environment variable
+        SCRIPTING_LICENSE_KEY: ${{secrets.SCRIPTING_LICENSE_KEY}}
+      run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} --info --stacktrace
+      shell: bash
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@v4.4.1
+      with:
+        folder: report # The folder the action should deploy.
+
