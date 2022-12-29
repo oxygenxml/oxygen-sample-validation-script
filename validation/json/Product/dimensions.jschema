@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft/2020-12/schema",
+    "title": "Personal schema.",
+    "type": "object",
+    "$defs": {
+        "dimensionsDef": {
+            "type": "object",
+            "properties": {
+                "length": {"type": "number"},
+                "width": {"type": "number"},
+                "height": {"type": "number"}
+            },
+            "required": [
+                "length",
+                "width",
+                "height"
+            ]
+        }
+    }
+}
