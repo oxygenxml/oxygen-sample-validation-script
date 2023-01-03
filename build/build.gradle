@@ -16,6 +16,9 @@ task initValidation() {
 }
 
 task runValidation(type: Exec, dependsOn: [initValidation]) {
+    validationDir = localBuid ? "${projectDir}/../validation/" + validationDir
+                              : "${projectDir}/../../" + validationDir
+    println ("Validation dir: " + validationDir)
     workingDir "${projectDir}/extracted/oxygen"
     commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh",
             "${projectDir}/../validation/" + validationDir, 
@@ -29,7 +32,6 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             throw new TaskExecutionException(it, new Exception("Validation failed, see task output for details."))
         } else {
             // Replace file locations from GitHub VM with locations from repository.
-            println "teh project URL: ${projectDir}"
             ant.replace(
                     file: '../report/validationReport.html',
                     token: 'file:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',
