@@ -18,6 +18,7 @@ task initValidation() {
 task runValidation(type: Exec, dependsOn: [initValidation]) {
     validationDir = localBuild ? "${projectDir}/../validation/" + validationDir
                                : "${projectDir}/../../" + validationDir
+    println ("Local build: " + localBuild)
     println ("Validation dir: " + validationDir)
     workingDir "${projectDir}/extracted/oxygen"
     commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh",
