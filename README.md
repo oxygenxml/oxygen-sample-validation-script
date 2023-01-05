@@ -1,5 +1,5 @@
-# Oxygen Sample Validation Script
-This project provides you with a sample of Oxygen Scripting tool, 
+# Oxygen Script - Validation Template
+This project provides you with a template of Oxygen Scripting Validation tool, 
 by allowing to validate the files from your GitHub repository. The Validation
 Script starts whenever a commit is pushed to your repo, and generates a validation
 report that is available on GitHub Pages platform.
@@ -23,4 +23,4 @@ The validation report generated using Oxygen Scripting should be available here:
 https://{userid}.github.io/{reponame}/validationReport.html
 
 The validation report generated from oxygenxml repository is available here::
-https://oxygenxml.github.io/oxygen-sample-validation-script/validationReport.html
+https://oxygenxml.github.io/oxygen-script-validation-template/validationReport.html
