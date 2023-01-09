@@ -8,7 +8,7 @@
                     <entry>
                         <String>catalogs.v5</String>
                         <String-array>
-                            <String>file:/D:/GitRepos/ValidateScript/JSONSchema/2020/Sample/catalog.xml</String>
+                            <String>${pdu}/validation/json/JSONSchema-2020-12/catalog.xml</String>
                         </String-array>
                     </entry>
                     <entry>
@@ -31,7 +31,7 @@
                                                 <Boolean>true</Boolean>
                                             </field>
                                             <field name="schematronPath">
-                                                <String>file:/D:/GitRepos/oxygen-sample-validation-script/validation/markdown/schematron-validation/md-as-dita.sch</String>
+                                                <String>${pdu}/validation/markdown/schematron-validation/md-as-html.sch</String>
                                             </field>
                                         </markdownSchematronValidatorTypeOptions>
                                     </entry>
@@ -42,7 +42,7 @@
                                                 <Boolean>true</Boolean>
                                             </field>
                                             <field name="schematronPath">
-                                                <String>file:/D:/GitRepos/oxygen-sample-validation-script/validation/markdown/schematron-validation/md-as-html.sch</String>
+                                                <String>${pdu}/validation/markdown/schematron-validation/md-as-dita.sch</String>
                                             </field>
                                         </markdownSchematronValidatorTypeOptions>
                                     </entry>
@@ -53,26 +53,6 @@
                     <entry>
                         <String>validation.scenario.associations</String>
                         <scenarioAssociation-array>
-                            <scenarioAssociation>
-                                <field name="url">
-                                    <String>validation/xslt-xquery/personal.xsl</String>
-                                </field>
-                                <field name="scenarioIds">
-                                    <list>
-                                        <String>personal</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioTypes">
-                                    <list>
-                                        <String>Validation_scenario</String>
-                                    </list>
-                                </field>
-                                <field name="scenarioStorageLocations">
-                                    <list>
-                                        <Byte>2</Byte>
-                                    </list>
-                                </field>
-                            </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
                                     <String>validation/json/OpenAPI/farmstall.json</String>
@@ -95,11 +75,11 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>validation/json/AsyncAPI/emailService.json</String>
+                                    <String>validation/json/OpenAPI/petSitterOpenAPI.json</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
+                                        <String>6/json/openapi3.0.framework/OpenAPI 3.0/OpenAPI 3.0</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
@@ -115,11 +95,31 @@
                             </scenarioAssociation>
                             <scenarioAssociation>
                                 <field name="url">
-                                    <String>validation/json/OpenAPI/petSitterOpenAPI.json</String>
+                                    <String>validation/xslt-xquery/personal.xsl</String>
                                 </field>
                                 <field name="scenarioIds">
                                     <list>
-                                        <String>6/json/openapi3.0.framework/OpenAPI 3.0/OpenAPI 3.0</String>
+                                        <String>personal</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioTypes">
+                                    <list>
+                                        <String>Validation_scenario</String>
+                                    </list>
+                                </field>
+                                <field name="scenarioStorageLocations">
+                                    <list>
+                                        <Byte>2</Byte>
+                                    </list>
+                                </field>
+                            </scenarioAssociation>
+                            <scenarioAssociation>
+                                <field name="url">
+                                    <String>validation/json/AsyncAPI/emailService.json</String>
+                                </field>
+                                <field name="scenarioIds">
+                                    <list>
+                                        <String>6/json/asyncapi_2.x.framework/AsyncAPI 2.x/AsyncAPI 2.x</String>
                                     </list>
                                 </field>
                                 <field name="scenarioTypes">
