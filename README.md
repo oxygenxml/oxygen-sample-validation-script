@@ -24,3 +24,7 @@ https://{userid}.github.io/{reponame}/validationReport.html
 
 The validation report generated from <b>oxygenxml</b> repository is available here:
 https://oxygenxml.github.io/oxygen-script-validation-template/validationReport.html
+
+
+[![Validating XML and JSON using Oxygen XML Editor Command Line Scripts – This video shows how to use scripts from a command-line tool to validate documents.
+](https://img.youtube.com/vi/-StaBf-JQa8/0.jpg "Oxygen Validate Script")](https://youtu.be/-StaBf-JQa8)
