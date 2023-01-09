@@ -3,8 +3,13 @@ task initValidation() {
         if (!new File("${projectDir}/extracted/oxygen/").exists()) {
             ant.get(src: 'https://www.oxygenxml.com/InstData/Editor/All/oxygen.tar.gz', dest: "${projectDir}/oxygen.tar.gz", skipexisting: 'true')
             ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
+
             String key = System.getenv('SCRIPTING_LICENSE_KEY') ?: licenseKey
-            new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(System.getenv('SCRIPTING_LICENSE_KEY').replaceAll("  ", "\n"))
+            if (key == null) {
+                throw new TaskExecutionException(it, new Exception("You need a valid Oxygen Scripting license key."))
+            } else {
+                new File("${projectDir}/extracted/oxygen/scriptinglicensekey.txt").write(key.replaceAll("  ", "\n"))
+            }
         }
     }
     doLast {
@@ -16,9 +21,11 @@ task initValidation() {
 }
 
 task runValidation(type: Exec, dependsOn: [initValidation]) {
+    // Compute the validation directory depending on where the script is started from.
+    String valDir = "${projectDir}" + (localBuild.toBoolean() ? "/../validation/" : "/../../") + validationDir
     workingDir "${projectDir}/extracted/oxygen"
     commandLine "${projectDir}/extracted/oxygen/scripts/validate.sh",
-            "${projectDir}/../validation/" + validationDir, 
+            valDir,
             "-sf", "${projectDir}/../validateScript.xpr", 
             "-rft", "html", 
             "-rf", "${projectDir}/../report/validationReport.html"
@@ -29,7 +36,6 @@ task runValidation(type: Exec, dependsOn: [initValidation]) {
             throw new TaskExecutionException(it, new Exception("Validation failed, see task output for details."))
         } else {
             // Replace file locations from GitHub VM with locations from repository.
-            println "teh project URL: ${projectDir}"
             ant.replace(
                     file: '../report/validationReport.html',
                     token: 'file:/home/runner/work/oxygen-sample-validation-script/oxygen-sample-validation-script',

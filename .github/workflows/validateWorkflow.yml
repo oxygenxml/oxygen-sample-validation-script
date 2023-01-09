@@ -3,7 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      # Automatically run the script when changes are pushed to validation dir.
+      # Automatically run the script when changes are pushed to "validation" directory.
       - validation/**
   pull_request:  
     branches: [ main ]
@@ -14,7 +14,7 @@ on:
     inputs:
       validationDir:
         description: 'The directory to be validated.'
-        # By default, all the files inside the validation dir will be validated.
+        # By default, all the files under the "validation" directory will be validated.
         default: ''
 
 jobs:
@@ -38,9 +38,9 @@ jobs:
         - name: Make gradlew executable
           run: chmod +x ./build/gradlew
         - name: Build with Gradle
-          env: # Or as an environment variable
+          env:
            SCRIPTING_LICENSE_KEY: ${{secrets.SCRIPTING_LICENSE_KEY}}
-          run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} --info --stacktrace
+          run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} -PlocalBuild=true --info --stacktrace
        
         - name: Deploy
           uses: JamesIves/github-pages-deploy-action@v4.4.1
