@@ -4,7 +4,7 @@ task initValidation() {
             ant.get(src: 'https://www.oxygenxml.com/InstData/Editor/All/oxygen.tar.gz', dest: "${projectDir}/oxygen.tar.gz", skipexisting: 'true')
             ant.untar(src: "${projectDir}/oxygen.tar.gz", dest: "${projectDir}/extracted", compression: 'gzip')
 
-            String key = System.getenv('SCRIPTING_LICENSE_KEY') ?: licenseKey
+            String key = System.getenv('SCRIPTING_LICENSE_KEY')
             if (key == null) {
                 throw new TaskExecutionException(it, new Exception("You need a valid Oxygen Scripting license key."))
             } else {
