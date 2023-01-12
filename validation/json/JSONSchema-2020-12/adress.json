@@ -1,8 +1,0 @@
-{
-    "$schema": "address.schema.json",
-    
-    "locality": "Reykjavík",
-    "region": "Höfuðborgarsvæðið",
-    "postal-code": "107",
-    "country-name": "Iceland"
-}

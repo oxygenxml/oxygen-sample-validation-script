@@ -19,8 +19,14 @@ If you want to validate only the files in a specific directory, you need to run 
 - Click the <kbd>Run workflow</kbd> button in the right side.
 - Type the name of the directory and click <b>Run workflow</b>.
 
+📝 If you already have a repository that you want to perform validation on, you may want to check [Oxygen Validation action](https://github.com/marketplace/actions/oxygen-validation) and include it in your workflow.
+
 The validation report generated using Oxygen Scripting should be available here:
 https://{userid}.github.io/{reponame}/validationReport.html
 
 The validation report generated from <b>oxygenxml</b> repository is available here:
 https://oxygenxml.github.io/oxygen-script-validation-template/validationReport.html
+
+
+[![Validating XML and JSON using Oxygen XML Editor Command Line Scripts – This video shows how to use scripts from a command-line tool to validate documents.
+](https://img.youtube.com/vi/-StaBf-JQa8/0.jpg "Oxygen Validate Script")](https://youtu.be/-StaBf-JQa8)
