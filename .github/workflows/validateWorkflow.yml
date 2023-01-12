@@ -16,6 +16,10 @@ on:
         description: 'The directory to be validated.'
         # By default, all the files under the "validation" directory will be validated.
         default: ''
+      deploy:
+        type: boolean
+        required: false
+        default: false
 
 jobs:
   validate:
@@ -44,6 +48,7 @@ jobs:
           run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} -PlocalBuild=true --info --stacktrace
        
         - name: Deploy
+          if: ${{ inputs.deploy }}
           uses: JamesIves/github-pages-deploy-action@v4.4.1
           with:
             folder: report # The folder the action should deploy.
