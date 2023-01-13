@@ -17,6 +17,7 @@ on:
         # By default, all the files under the "validation" directory will be validated.
         default: ''
       deploy:
+        description: 'Deploy the validation report on gh-pages branch.'
         type: boolean
         required: false
         default: false
@@ -45,7 +46,7 @@ jobs:
         - name: Build with Gradle
           env:
            SCRIPTING_LICENSE_KEY: ${{secrets.SCRIPTING_LICENSE_KEY}}
-          run: cd build; ./gradlew runValidation -PvalidationDir=${{ github.event.inputs.validationDir }} -PlocalBuild=true --info --stacktrace
+          run: cd build; ./gradlew runValidation -PvalidationDir=${{ inputs.validationDir }} -PlocalBuild=true --info --stacktrace --build-cache
        
         - name: Deploy
           if: ${{ inputs.deploy }}
