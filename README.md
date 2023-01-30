@@ -11,7 +11,7 @@ To get things ready, follow these steps:
 3. Open <i>build/gradle.properties</i> file and replace "oxygenxml" with your GitHub {userid}.
 
 Now, as the setup should be ready, you can simply add your files inside the <i>validation</i> directory and push them into your repository.
-This will trigger the validation workflow, that by default validates the entire directory. Feel free to use or remove the sample files provided with this template.
+This will trigger the validation workflow, that by default validates the entire directory. The validation report will be deployed to <i>gh-pages</i> branch. Feel free to use or remove the sample files provided with this template.
 
 📝 Make sure the workflow has read/write permissions (Settings &#8594; Actions &#8594; General &#8594; Workflow permissions). Otherwise, you may not be able to deploy your report.
 
