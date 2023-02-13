@@ -21,7 +21,7 @@ If you want to validate only the files in a specific directory, you need to run 
 - Click the <kbd>Run workflow</kbd> button in the right side.
 - Type the name of the directory and click <b>Run workflow</b>.
 
-📝 If you already have a repository that you want to perform validation on, you may want to check [Oxygen Validation action](https://github.com/marketplace/actions/oxygen-validation-action) and include it in your workflow.
+👀 If you already have a repository that you want to perform validation on, you may want to check [Oxygen Validation action](https://github.com/marketplace/actions/oxygen-validation-action) and include it in your workflow.
 
 The validation report generated using Oxygen Scripting should be available here:
 https://{userid}.github.io/{reponame}/validationReport.html
